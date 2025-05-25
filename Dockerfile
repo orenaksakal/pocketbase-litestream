@@ -1,8 +1,9 @@
 # syntax=docker/dockerfile:1
 # MAINTAINER "Brian Scott <dev@bscott.mozmail.com>"
 
-FROM alpine:3.6
+FROM alpine:latest
 
+ARG BUILDARCH
 ARG POCKETBASE_VERSION=0.28.2
 
 # Install the dependencies
