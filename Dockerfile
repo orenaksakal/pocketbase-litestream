@@ -23,7 +23,6 @@ ADD https://github.com/pocketbase/pocketbase/releases/download/v${POCKETBASE_VER
 
 RUN unzip /tmp/pb.zip -d /app/
 RUN rm /tmp/pb.zip
-RUN chmod +x /usr/local/bin/pocketbase
 
 # Download the static build of Litestream directly into the path & make it executable.
 # This is done in the builder and copied as the chmod doubles the size.
