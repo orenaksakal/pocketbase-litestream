@@ -20,7 +20,9 @@ RUN mkdir -p /pb_data
 # Download Pocketbase and install it for AMD64
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${POCKETBASE_VERSION}/pocketbase_${POCKETBASE_VERSION}_linux_${BUILDARCH}.zip /tmp/pb.zip
 
-RUN unzip /tmp/pocketbase.zip -d /usr/local/bin/
+
+RUN unzip /tmp/pb.zip -d /app/
+RUN rm /tmp/pb.zip
 RUN chmod +x /usr/local/bin/pocketbase
 
 # Download the static build of Litestream directly into the path & make it executable.
