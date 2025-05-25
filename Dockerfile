@@ -3,7 +3,7 @@
 
 FROM alpine:3.6
 
-ARG POCKETBASE_VERSION=v0.18.6
+ARG POCKETBASE_VERSION=v0.28.2
 
 # Install the dependencies
 RUN apk add --no-cache \
@@ -17,7 +17,8 @@ RUN apk add --no-cache \
 RUN mkdir -p /pb_data
 
 # Download Pocketbase and install it for AMD64
-ADD https://github.com/pocketbase/pocketbase/releases/download/v${POCKETBASE_VERSION}/pocketbase_${POCKETBASE_VERSION}_linux_amd64.zip /tmp/pocketbase.zip
+ADD https://github.com/pocketbase/pocketbase/releases/download/v${POCKETBASE_VERSION}/pocketbase_${POCKETBASE_VERSION}_linux_${BUILDARCH}.zip /tmp/pb.zip
+
 RUN unzip /tmp/pocketbase.zip -d /usr/local/bin/
 RUN chmod +x /usr/local/bin/pocketbase
 
